@@ -1,0 +1,181 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+label{
+
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 13px;
+}
+td{
+    font-weight: 400;
+}
+.green{
+    color: #1E8E00;
+    font-weight: 600;
+}
+
+.switch6 {  
+    max-width: 17em; 
+    margin: 0;
+    padding: 0;
+ }
+.switch6-light > span, .switch-toggle > span { 
+     color: #000000; 
+    }
+.switch6-light span span, .switch6-light label, .switch-toggle span span, .switch-toggle label 
+{  
+    color: #ffffff; 
+}
+
+
+.switch-toggle a, 
+.switch6-light span span { display: none; }
+
+/* Inner Box  */
+.switch6-light { 
+    font-family: 'Montserrat', sans-serif;
+    display: block; 
+    height: 43px;
+    background-color: #2a2a2a;
+     position: relative; 
+     padding: 7px;
+     margin: 0;
+     margin-left: 0px;
+    border-radius: 23px;
+    }
+
+.switch6-light a { 
+    display: block; 
+    transition: all 0.3s ease-out 0s; 
+}
+
+.switch6-light label, 
+.switch6-light > span { 
+    line-height: 30px;
+    vertical-align: middle;
+    
+}
+
+.switch6-light label {
+    font-weight: 800; 
+    margin-bottom: 0px; 
+    max-width: 100%;
+
+}
+.switch6-light input { 
+
+    position: absolute;
+     opacity: 0; 
+     z-index: 5;
+     
+     }
+.switch6-light input:checked ~ a { 
+    right: 0%;
+ }
+.switch6-light > span { 
+    position: absolute; 
+    left: -100px; 
+    width: 100%; margin: 0px; 
+    padding-right: 100px; 
+    text-align: left; 
+ 
+}
+.switch6-light > span span { 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    z-index: 5; 
+    display: block; 
+    width: 50%; 
+    margin-left: 100px; 
+    text-align: center;
+    font-size: 10px;
+    
+
+    
+}
+.switch6-light > span span:last-child { 
+    left: 50%; 
+    
+}
+.switch6-light a { 
+    position: absolute; 
+    right: 50%; 
+    top: 0px; 
+    z-index: 4; 
+    display: block; 
+    width: 50%; 
+    height: 100%; 
+    padding: 0px; 
+    border-radius: 25px;
+    background-color: #1E8E00;
+    border-color: #1E8E00;
+}
+
+.container-fluid{
+    padding-top: 3rem;
+
+}
+.form-control{
+    border-radius: 0px;
+    background-color: #F5F5F5;
+  }
+  .form-control:hover{
+    border: 1px solid #1E8E00;
+  }
+  .form-control:focus{
+    border: 2px solid #000000;
+    box-shadow: none;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+  }
+.input-group-prepend{
+    border-radius: 0px;
+}
+.input-group{
+    border-radius: 0px;
+}
+.input-group-text{
+    border-radius: 0px;
+}
+.btn{
+    color: #ffffff;
+    background-color: #000000;
+
+}
+.btn:hover{
+    color: #ffffff;
+    background-color: #1E8E00;
+}
+.line{
+   font-size:60px;
+    width: 100%;
+     background-color: black; 
+   height: 10px;
+    border-radius: 20px;
+}
+
+#switch{
+    margin-left: 27%;
+    margin-right: 27%;
+}
+
+
+@media screen and (max-width: 619px) {
+  #switch{
+    margin-left: 21%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .distance{
+    margin-left: 15%;
+  }
+}

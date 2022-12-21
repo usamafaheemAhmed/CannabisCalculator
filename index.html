@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+
+    <title>Weed Price Calculator</title>
+</head>
+<body>
+<!-- <h1>CANNABIS CALCULATOR</h1> -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 text-center">
+            <img src="./leaf.svg" alt="leaf" class="img-fluid w-75">
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">Weed Price Calculator</h3>
+            <p class="text-center">Use this to calculate price and profit</p>
+           
+            <div class="row mt-4">
+                <div class="col-md-6" id="switch">
+                    <div class="switch6">
+                        <label class="switch6-light">
+                            <input onclick="calBreak()" type="checkbox">
+                            <span>
+                                            <span>Calculator</span>
+                                            <span>Breakdown</span>
+                                        </span>
+                            <a class="btn btn-primary"></a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-3">
+
+                <div class="col-md-12">
+                    <h3 class="text-center" id="selectedCal">Calculator Mode</h3>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <label class="text-center" id="howMuch"> How many?</label>
+                    <select class="form-control shadow-none" id="units" name="units" onchange="unit()">
+                        <option selected value="U">Unit(s)</option>
+                        <option value="G">Gram(s)</option>
+                        <option value="D">Dime(s)</option>
+                        <option value="Du">Dub(s)</option>
+                        <option value="E">Eighth(s)</option>
+                        <option value="Q">Quatre(s)</option>
+                        <option value="H">Half(s)</option>
+                        <option value="Z">Zip(s)</option>
+                        <option value="O">Ounce(s)</option>
+                        <option value="P">Pound(s)</option>
+
+                    </select>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <label class="text-center" id="secondLabel">of it are you buying?</label>
+                    <div class="input-group">
+                        <input aria-describedby="basic-addon2" aria-label="Recipient's username" class="form-control" id="number"
+                               placeholder="# Enter" type="text">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="selectedUnit">Unit(s)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <label class="text-center" id="thirdLabel">*Optional: Price per Gram?</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">$</span>
+                        </div>
+                        <input aria-describedby="basic-addon1" aria-label="Username" class="form-control" id="price"
+                               placeholder="Optional" type="text">
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row ">
+                <div class="col-md-12 text-center">
+                    <button class="btn" id="button" onclick="calculate()">
+
+                        Calculate <i class="fa fa-money"></i></button>
+                </div>
+            </div>
+            <div class="row mt-3 distance">
+                <div class="col-md-3 "></div>
+                <div class="col-md-6 ">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 col-4 col-sm-4  pt-3">
+                            <div class="line"></div>
+                        </div>
+                        <i class="fa fa-calculator" style="font-size:36px;  color: #000;"></i>
+                        <div class="col-md-4 col-4 col-sm-4  pt-3">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+            <div class="row mt-3">
+
+                <div class="col-md-12 ">
+                    <h2 class="text-center" id="totalResult"></h2>
+                </div>
+
+            </div>
+            <div class="row mt-3 distance">
+                <div class="col-md-3"></div>
+                <div class="col-md-6  ">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 col-4 col-sm-4 pt-3">
+                            <div class="line"></div>
+                        </div>
+                        <i class="fa fa-calculator" style="font-size:36px; color: #000;"></i>
+                        <div class="col-md-4 col-4 col-sm-4 pt-3">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+
+            <div class="col-md-12 mt-3">
+                <table class="table table-bordered">
+                    <tbody class="text-center" id="myTable">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3  text-center">
+            <svg
+xmlns="http://www.w3.org/2000/svg"
+x="0px" y="0px"
+width="64" height="64"
+viewBox="0 0 172 172"
+style=" fill:#26e07f;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#1fb141"><path d="M21.5,21.5v129h64.5v-32.25v-64.5v-32.25zM86,53.75c0,17.7805 14.4695,32.25 32.25,32.25c17.7805,0 32.25,-14.4695 32.25,-32.25c0,-17.7805 -14.4695,-32.25 -32.25,-32.25c-17.7805,0 -32.25,14.4695 -32.25,32.25zM118.25,86c-17.7805,0 -32.25,14.4695 -32.25,32.25c0,17.7805 14.4695,32.25 32.25,32.25c17.7805,0 32.25,-14.4695 32.25,-32.25c0,-17.7805 -14.4695,-32.25 -32.25,-32.25z"></path></g></g></svg>
+            <!-- <img src="./leaf.svg" alt="leaf" class="img-fluid w-75">
+             -->
+        </div>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script crossorigin="anonymous"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+-->
+<script src="./script.js"></script>
+</body>
+</html>
